@@ -7,7 +7,7 @@ import {
 import { addDoc, collection, getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDfzCc7PuU6A1Kc0_KcfOzgEBKRbRKcSF0",
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
   authDomain: "netflix-clone-f4bc8.firebaseapp.com",
   projectId: "netflix-clone-f4bc8",
   storageBucket: "netflix-clone-f4bc8.firebasestorage.app",

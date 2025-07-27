@@ -13,6 +13,7 @@ const Login = () => {
 
   const userAuth = async (e) => {
     e.preventDefault()
+    
     if (signState === 'Sign In') {
       await logIn(email, password)
     } else {
