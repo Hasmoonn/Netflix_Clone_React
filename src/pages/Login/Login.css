@@ -9,6 +9,7 @@
 
 .login .login-logo{
   width: 150px;
+  cursor: pointer;
 }
 
 .login-form{

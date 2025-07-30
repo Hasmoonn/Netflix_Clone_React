@@ -2,28 +2,35 @@ import React, { useState } from 'react'
 import './Login.css'
 import logo from '../../assets/logo.png'
 import { logIn, signUp } from '../../firebase.js'
+import { useNavigate } from 'react-router-dom'
+import netflix_spinner from '../../assets/netflix_spinner.gif'
 
 const Login = () => {
 
   const [signState, setSignState] = useState("Sign In");
 
+  const navigate = useNavigate();
+
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false)
 
   const userAuth = async (e) => {
     e.preventDefault()
-    
+    setLoading(true)
     if (signState === 'Sign In') {
       await logIn(email, password)
     } else {
       await signUp(name, email, password)
     }
+
+    setLoading(false)
   }
 
   return (
     <div className='login'>
-      <img src={logo} alt="" className='login-logo' />
+      <img src={logo} alt="" className='login-logo' onClick={() => navigate('/')} />
       <div className="login-form">
         <h1>
           {signState === 'Sign In' ? "Sign In" : "Sign Up"}
