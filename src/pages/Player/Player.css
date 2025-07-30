@@ -23,4 +23,11 @@
   align-items: center;
   justify-content: space-between;
   width: 90%;
+  gap: 2px;
+}
+
+@media (max-width: 800px) {
+  .player iframe{
+    margin-top: 70px;
+  }
 }
